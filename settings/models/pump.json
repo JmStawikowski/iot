@@ -1,0 +1,265 @@
+{
+    "logo": "images/Schneider_Electric.png",
+    "icon": "images/Dell-OptiPlex-3070.png",
+    "name": "IIOT MODULE",
+    "menu": [
+        {
+            "name": "Home",
+            "sub": [
+                {
+                    "name": "Demo-1",
+                    "inner": [
+                        {
+                            "name": "Node-RED-1",
+                            "port": "8001"
+                        },
+                        {
+                            "name": "Node-RED-2",
+                            "port": "8002"
+                        },
+                        {
+                            "aaa": "Dashboard",
+                            "port": "8023"
+                        }
+                    ]
+                },
+                {
+                    "name": "Demo-2",
+                    "inner": [
+                        {
+                            "name": "Node-RED-3",
+                            "port": "8003"
+                        },
+                        {
+                            "name": "Machine-Advisor Cloud",
+                            "url": "https://machine-advisor.schneider-electric.com/"
+                        }
+                    ]
+                },
+                {
+                    "name": "Demo-3",
+                    "inner": [
+                        {
+                            "name": "Node-RED-6",
+                            "port": "8006"
+                        },
+                        {
+                            "name": "Node-RED-7",
+                            "port": "8007"
+                        },
+                        {
+                            "name": "Pump1",
+                            "port": "8010/ui"
+                        },
+                        {
+                            "name": "Pump2",
+                            "port": "8011/ui"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Apps",
+            "sub": [
+                {
+                    "name": "Stores",
+                    "inner": [
+                        {
+                            "name": "Docker Hub",
+                            "url": "https://hub.docker.com/explore/"
+                        },
+                        {
+                            "name": "Nexus",
+                            "port": "8081"
+                        }
+                    ]
+                },
+                {
+                    "name": "My apps",
+                    "inner": [
+                        {
+                            "name": "Manage-9001",
+                            "port": "9001"
+                        },
+                        {
+                            "name": "Manage-9003",
+                            "port": "9003"
+                        },
+                        {
+                            "name": "Manage-9009",
+                            "port": "9009"
+                        },
+                        {
+                            "name": "Rancher",
+                            "url": "https://ecostruxure.francecentral.cloudapp.azure.com:8444/"
+                        },
+                        {
+                            "name": "Coder",
+                            "port": "8443"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Devices",
+            "sub": [
+                {
+                    "name": "Manager",
+                    "inner": [
+                        {
+                            "name": "Dashboard",
+                            "port": "8023/ui"
+                        },
+                        {
+                            "name": "Portainer",
+                            "port": "9000"
+                        },
+                        {
+                            "name": "MQTT",
+                            "port": "80/mqtt/"
+                        },
+                        {
+                            "name": "HiveMQ",
+                            "port": "80/hivemq/"
+                        }
+                    ]
+                },
+                {                    
+                    "name": "Pump1",
+                    "inner": [
+                        {
+                            "name": "Dashboard",
+                            "url": "http://stawikowski.freeboxos.fr:8011/ui/"
+                        },
+                        {
+                            "name": "Node-RED",
+                            "url": "http://stawikowski.freeboxos.fr:8011/"
+                        },
+                        {
+                            "name": "Manage",
+                            "url": "http://stawikowski.freeboxos.fr:9001/"
+                        }
+                    ]                   
+                },
+                {                    
+                    "name": "Pump2",
+                    "inner": [
+                        {
+                            "name": "Dashboard",
+                            "url": "http://stawikowski.freeboxos.fr:8012/ui/"
+                        },
+                        {
+                            "name": "Node-RED",
+                            "url": "http://stawikowski.freeboxos.fr:8012/"
+                        },
+                        {
+                            "name": "Manage",
+                            "url": "http://stawikowski.freeboxos.fr:9002/"
+                        }
+                    ]                   
+                }
+            ]
+        },
+        {
+            "name": "Local",
+            "sub": [
+                {
+                    "name": "Links",
+                    "inner": [
+                        {
+                            "name": "Azure - 40.89.139.25",
+                            "url": "http://40.89.139.25/"
+                        },
+                        {
+                            "name": "Dell - 192.168.0.45",
+                            "url": "http://192.168.0.45/"
+                        },
+                        {
+                            "name": "Rpi4 - 192.168.0.7",
+                            "url": "http://192.168.0.7/"
+                        },
+                        {
+                            "name": "Rpi2 - 192.168.0.25",
+                            "url": "http://192.168.0.25/"
+                        },
+                        {
+                            "name": "Pump1 - 192.168.0.19",
+                            "url": "http://192.168.0.19/"
+                        },
+                        {
+                            "name": "Pump2 - 192.168.0.35",
+                            "url": "http://192.168.0.35/"
+                        }
+                    ]
+                },
+                {
+                    "name": "Pump1",
+                    "inner": [
+                        {
+                            "name": "Dashboard",
+                            "url": "http://192.168.0.19:8010/ui/"
+                        },
+                        {
+                            "name": "Node-RED",
+                            "url": "http://192.168.0.19:8010/"
+                        },
+                        {
+                            "name": "Manage",
+                            "url": "http://192.168.0.19:9000/"
+                        }
+                    ]
+                },
+                {
+                    "name": "Pump2",
+                    "inner": [
+                        {
+                            "name": "Dashboard",
+                            "url": "http://192.168.0.35:8010/ui/"
+                        },
+                        {
+                            "name": "Node-RED",
+                            "url": "http://192.168.0.35:8010/"
+                        },
+                        {
+                            "name": "Manage",
+                            "url": "http://192.168.0.35:9000/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "About",
+            "sub": [
+                {
+                    "name": "Node-RED",
+                    "inner": [
+                        {
+                            "name": "Site",
+                            "url": "https://schneiderelectric.sharepoint.com/sites/node-red"
+                        },
+                        {
+                            "name": "Group",
+                            "url": "https://www.yammer.com/schneider-electric.com/#/threads/inGroup?type=in_group&feedId=12248929&view=all"
+                        }
+                    ]
+                },
+                {
+                    "name": "Innovation",
+                    "inner": [
+                        {
+                            "name": "Site",
+                            "url": "https://schneiderelectric.sharepoint.com/sites/digitalplantedgecontrolpacactivityinnovation"
+                        },
+                        {
+                            "name": "Group",
+                            "url": "https://www.yammer.com/schneider-electric.com/#/threads/inGroup?type=in_group&feedId=16802817&view=all"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

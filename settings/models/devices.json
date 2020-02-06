@@ -1,0 +1,102 @@
+{
+    "logo": "images/Schneider_Electric.png",
+    "icon": "images/IIOT-Modules.png",
+    "name": "IIOT DEVICES",
+    "menu": [
+        {
+            "name": "Home",
+            "sub": [
+                {
+                    "name": "80",
+                    "inner": [
+                        {
+                            "name": "Pump",
+                            "url": "/?model=/settings/models/pump.json"
+                        },
+                        {
+                            "name": "Motor",
+                            "url": "/?model=/settings/models/motor.json"
+                        }
+                        ,
+                        {
+                            "name": "Devices",
+                            "url": "/?model=/settings/models/devices.json"
+                        },
+                        {
+                            "name": "Default",
+                            "url": "http://40.89.139.25/"
+                        },
+                        {
+                            "name": "Error",
+                            "url": "/?model=/settings/models/error.json"
+                        }                        
+                    ]
+                },
+                {
+                    "name": "8030",
+                    "inner": [
+                        {
+                            "name": "Pump",
+                            "port": "8030/?model=/settings/models/pump.json"
+                        },
+                        {
+                            "name": "Motor",
+                            "port": "8030/?model=/settings/models/motor.json"
+                        }
+                        ,
+                        {
+                            "name": "Devices",
+                            "port": "8030/?model=/settings/models/devices.json"
+                        },
+                        {
+                            "name": "Default",
+                            "url": "http://40.89.139.25:8030/"
+                        },
+                        {
+                            "name": "Error",
+                            "port": "8030/?model=/settings/models/error.json"
+                        }                          
+                    ]
+                },
+                {
+                    "name": "80-GitHub",
+                    "inner": [
+                        {
+                            "name": "Pump",
+                            "url": "/?model=https://raw.githubusercontent.com/JmStawikowski/templates/master/settings/models/pump.json"
+                        },
+                        {
+                            "name": "Motor",
+                            "url": "/?model=https://raw.githubusercontent.com/JmStawikowski/templates/master/settings/models/motor.json"
+                        }
+                        ,
+                        {
+                            "name": "Devices",
+                            "url": "/?model=https://raw.githubusercontent.com/JmStawikowski/templates/master/settings/models/devices.json"
+                        }
+                    ]
+                },
+                {
+                    "name": "8083-GitHub",
+                    "inner": [
+                        {
+                            "name": "Pump",
+                            "port": "8030/?model=https://raw.githubusercontent.com/JmStawikowski/templates/master/settings/models/pump.json"
+                        },
+                        {
+                            "name": "Motor",
+                            "port": "8030/?model=https://raw.githubusercontent.com/JmStawikowski/templates/master/settings/models/motor.json"
+                        }
+                        ,
+                        {
+                            "name": "Devices",
+                            "port": "8030/?model=https://raw.githubusercontent.com/JmStawikowski/templates/master/settings/models/devices.json"
+                        }
+                    ]
+                }
+
+
+            ]
+        }
+    ]
+}
