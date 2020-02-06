@@ -1,0 +1,301 @@
+[
+  {
+    "type": 1,
+    "title": "NGINX",
+    "note" :"<span class='blocklist-item-title'>NGINX</span>",
+    "name": "NGINX",
+    "hostname": "NGINX",     
+    "description": "Official build of Nginx.",
+    "categories": [
+      "schneider-electric"
+    ],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/JmStawikowski/iot/master/templates/images/logos/Nginx.png",
+    "image": "digitalplant/nginx:stable-alpine",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8030:80/tcp"
+    ],
+    
+    "volumes": [
+      {
+        "container": "/etc/nginx",
+        "bind": "Nginx-80-Etc-8030"
+      },
+      {
+        "container": "/usr/share/nginx/html",
+        "bind": "Nginx-80-Html-8030"
+      }
+    ],
+    "env": [
+      {
+        "name": "VIRTUAL_HOST",
+        "label": "VIRTUAL_HOST",
+        "default": "nginx8030",
+        "preset": false
+      }
+    ],
+    "labels": [
+      { "name": "traefik.http.routers.nginx8030.rule", "value": "nginx8030" },
+      { "name": "traefik.http.routers.nginx8030.entryPoints", "value": "http" },
+      { "name": "traefik.http.services.nginx8030.loadbalancer.server.port", "value": "8030" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Portainer",
+    "note" :"<span class='blocklist-item-title'>Portainer</span>",
+    "name": "Portainer",
+    "hostname": "Portainer",
+    "logo": "https://raw.githubusercontent.com/JmStawikowski/iot/master/templates/images/logos/Docker.png",
+    "description": "Simple management UI for Docker.",
+    "categories": [
+      "schneider-electric"
+    ],
+    "platform": "linux",
+    "image": "digitalplant/portainer:latest",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "9003:9000/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "Portainer-9003"
+      },
+      {
+        "container": "/var/run/docker.sock",
+        "bind": "/var/run/docker.sock"
+      }      
+    ],
+      "command": "--logo https://raw.githubusercontent.com/JmStawikowski/edge/master/images/logos/Schneider_Electric.png --template-file /data/templates.json"
+  },
+  {
+    "type": 1,
+    "title": "FileBrowser",
+    "note" :"<span class='blocklist-item-title'>FileBrowser</span>",
+    "name": "FileBrowser",
+    "hostname": "FileBrowser",  
+    "description": "Web File Browser..",
+    "categories": [
+      "schneider-electric"
+    ],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/JmStawikowski/iot/master/templates/images/logos/FileBrowser.png",
+    "image": "n0cloud/filebrowser-multiarch:latest",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8066:80/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/srv",
+        "bind": "FileBrowser-8066"
+      },
+      {
+        "container": "/srv/Nginx-80-Etc",
+        "bind": "Nginx-80-Etc"
+      },
+      {
+        "container": "/srv/Nginx-80-Html",
+        "bind": "Nginx-80-Html"
+      },
+      {
+        "container": "/srv/Node-RED-8001",
+        "bind": "Node-RED-8001"
+      },
+      {
+        "container": "/srv/Node-RED-8002",
+        "bind": "Node-RED-8002"
+      },
+      {
+        "container": "/srv/Node-RED-8003",
+        "bind": "Node-RED-8003"
+      },
+      {
+        "container": "/srv/Node-RED-8006",
+        "bind": "Node-RED-8006"
+      },
+      {
+        "container": "/srv/Node-RED-8007",
+        "bind": "Node-RED-8007"
+      },
+      {
+        "container": "/srv/Portainer-9000",
+        "bind": "Portainer-9000"
+      },
+      {
+        "container": "/srv/Portainer-9003",
+        "bind": "Portainer-9003"
+      },
+      {
+        "container": "/srv/Portainer-9009",
+        "bind": "Portainer-9009"
+      },
+      {
+        "container": "/srv/MQTT-Mosquitto-8004-config",
+        "bind": "MQTT-Mosquitto-8004-config"
+      },
+      {
+        "container": "/srv/MQTT-Mosquitto-8004-data",
+        "bind": "MQTT-Mosquitto-8004-data"
+      },
+      {
+        "container": "/srv/MQTT-Mosquitto-8004-log",
+        "bind": "MQTT-Mosquitto-8004-log"
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Pump",
+    "note" :"<span class='blocklist-item-title'>Pump</span>",
+    "name": "Pump",
+    "hostname": "Pump",  
+    "description": "Manage Pump in your Device.",
+    "categories": [
+      "schneider-electric"
+    ],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/JmStawikowski/iot/master/templates/images/logos/Pump.png",
+    "image": "digitalplant/pump:latest-minimal",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8010:1880/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/data"
+      }
+    ],
+    "env": [
+      {
+        "name": "DEVICE_NODE_HOSTNAME",
+        "label": "NAME",
+        "default": "Pump1",
+        "preset": false
+      },
+      {
+        "name": "DEVICE_SERVICE_NAME",
+        "label": "TYPE",
+        "default": "Module",
+        "preset": false
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Node-RED",
+    "note" :"<span class='blocklist-item-title'>Node-RED</span>",
+    "name": "Node-RED",
+    "hostname": "Node-RED",     
+    "description": "Low-code programming for event-driven applications.",
+    "categories": [
+      "schneider-electric"
+    ],
+    "platform": "linux",
+    "image": "nodered/node-red:latest-minimal",
+    "logo": "https://raw.githubusercontent.com/JmStawikowski/iot/master/templates/images/logos/Node-red-icon.png",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8007:1880/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "Node-RED-8007"
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "MQTT-Eclipse-Mosquitto-Broker",
+    "note" :"<span class='blocklist-item-title'>MQTT-Eclipse-Mosquitto-Broker</span>",
+    "name": "MQTT-Mosquitto",
+    "hostname": "MQTT-Mosquitto",
+    "description": "Eclipse Mosquitto is an open source message broker which implements MQTT version 5, 3.1.1 and 3.1.",
+    "categories": [
+      "schneider-electric"
+    ],
+    "platform": "linux",
+    "image": "digitalplant/eclipse-mosquitto:latest",
+    "logo": "https://raw.githubusercontent.com/JmStawikowski/iot/master/templates/images/logos/Mosquitto.png",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8004:1883/tcp",
+      "8005:9001/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/mosquitto/config",
+        "bind": "MQTT-Mosquitto-8004-config"
+      },
+      {
+        "container": "/mosquitto/data",
+        "bind": "MQTT-Mosquitto-8004-data"
+      },
+      {
+        "container": "/mosquitto/log",
+        "bind": "MQTT-Mosquitto-8004-log"
+      }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Portainer Edge Agent",
+    "note" :"<span class='blocklist-item-title'>Portainer Edge Agent</span>",
+    "name": "portainer_agent_data",
+    "hostname": "Portainer-Edge-Agent",  
+    "description": "Deploy the Edge agent on your remote Docker environment.",
+    "categories": [
+      "schneider-electric"
+    ],
+    "platform": "linux",
+    "logo": "https://raw.githubusercontent.com/JmStawikowski/iot/master/templates/images/logos/Portainer.png",
+    "image": "portainer/agent:latest",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8050:80/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/var/run/docker.sock",
+        "bind": "/var/run/docker.sock"
+      },
+      {
+        "container": "/host",
+        "bind": "/"
+      },
+      {
+        "container": "/data",
+        "bind": "portainer_agent_data_8050"
+      }      
+    ],
+    "env": [
+      {
+        "name": "EDGE",
+        "label": "EDGE",
+        "default": "1",
+        "preset": false
+      },
+      {
+        "name": "EDGE_ID",
+        "label": "EDGE_ID",
+        "default": "abc7e405-b010-45cc-b410-63fcb6af9490",
+        "preset": false
+      },
+      {
+        "name": "EDGE_KEY",
+        "label": "EDGE_KEY",
+        "default": "aHR0cDovLzQwLjg5LjEzOS4yNTo5MDAwfDQwLjg5LjEzOS4yNTo4MDAwfGMxOjNmOjQzOjMwOjk0OmUyOjdjOmJiOjc2OmI2OmJiOjNhOjZlOmY1OjVmOmVjfDQ",
+        "preset": false
+      },
+      {
+        "name": "CAP_HOST_MANAGEMENT",
+        "label": "CAP_HOST_MANAGEMENT",
+        "default": "1",
+        "preset": false
+      }
+    ]
+  }
+]
