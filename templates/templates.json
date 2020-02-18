@@ -10,13 +10,12 @@
       "schneider-electric"
     ],
     "platform": "linux",
-    "logo": "http://127.0.0.1/templates/images/logos/Nginx.png",
+    "logo": "http://40.89.139.25/templates/images/logos/Nginx.png",
     "image": "digitalplant/nginx:stable-alpine",
     "restart_policy": "unless-stopped",
     "ports": [
       "8030:80/tcp"
     ],
-    
     "volumes": [
       {
         "container": "/etc/nginx",
@@ -26,19 +25,6 @@
         "container": "/usr/share/nginx/html",
         "bind": "Nginx-80-Html-8030"
       }
-    ],
-    "env": [
-      {
-        "name": "VIRTUAL_HOST",
-        "label": "VIRTUAL_HOST",
-        "default": "nginx8030",
-        "preset": false
-      }
-    ],
-    "labels": [
-      { "name": "traefik.http.routers.nginx8030.rule", "value": "nginx8030" },
-      { "name": "traefik.http.routers.nginx8030.entryPoints", "value": "http" },
-      { "name": "traefik.http.services.nginx8030.loadbalancer.server.port", "value": "8030" }
     ]
   },
   {
@@ -47,7 +33,7 @@
     "note" :"<span class='blocklist-item-title'>Portainer</span>",
     "name": "Portainer",
     "hostname": "Portainer",
-    "logo": "http://127.0.0.1/templates/images/logos/Docker.png",
+    "logo": "http://40.89.139.25/templates/images/logos/Docker.png",
     "description": "Simple management UI for Docker.",
     "categories": [
       "schneider-electric"
@@ -81,7 +67,7 @@
       "schneider-electric"
     ],
     "platform": "linux",
-    "logo": "http://127.0.0.1/templates/images/logos/FileBrowser.png",
+    "logo": "http://40.89.139.25/templates/images/logos/FileBrowser.png",
     "image": "n0cloud/filebrowser-multiarch:latest",
     "restart_policy": "unless-stopped",
     "ports": [
@@ -93,56 +79,20 @@
         "bind": "FileBrowser-8066"
       },
       {
-        "container": "/srv/Nginx-80-Etc",
-        "bind": "Nginx-80-Etc"
+        "container": "/srv/root",
+        "bind": "/"
       },
       {
-        "container": "/srv/Nginx-80-Html",
-        "bind": "Nginx-80-Html"
+        "container": "/srv/home",
+        "bind": "/home"
       },
       {
-        "container": "/srv/Node-RED-8001",
-        "bind": "Node-RED-8001"
+        "container": "/srv/volumes",
+        "bind": "/var/lib/docker/volumes"
       },
       {
-        "container": "/srv/Node-RED-8002",
-        "bind": "Node-RED-8002"
-      },
-      {
-        "container": "/srv/Node-RED-8003",
-        "bind": "Node-RED-8003"
-      },
-      {
-        "container": "/srv/Node-RED-8006",
-        "bind": "Node-RED-8006"
-      },
-      {
-        "container": "/srv/Node-RED-8007",
-        "bind": "Node-RED-8007"
-      },
-      {
-        "container": "/srv/Portainer-9000",
-        "bind": "Portainer-9000"
-      },
-      {
-        "container": "/srv/Portainer-9003",
-        "bind": "Portainer-9003"
-      },
-      {
-        "container": "/srv/Portainer-9009",
-        "bind": "Portainer-9009"
-      },
-      {
-        "container": "/srv/MQTT-Mosquitto-8004-config",
-        "bind": "MQTT-Mosquitto-8004-config"
-      },
-      {
-        "container": "/srv/MQTT-Mosquitto-8004-data",
-        "bind": "MQTT-Mosquitto-8004-data"
-      },
-      {
-        "container": "/srv/MQTT-Mosquitto-8004-log",
-        "bind": "MQTT-Mosquitto-8004-log"
+        "container": "/srv/settings",
+        "bind": "/var/lib/docker/volumes/Nginx-80-Html-8030/_data/settings"
       }
     ]
   },
@@ -157,7 +107,7 @@
       "schneider-electric"
     ],
     "platform": "linux",
-    "logo": "http://127.0.0.1/templates/images/logos/Pump.png",
+    "logo": "http://40.89.139.25/templates/images/logos/Pump.png",
     "image": "digitalplant/pump:latest-minimal",
     "restart_policy": "unless-stopped",
     "ports": [
@@ -195,7 +145,7 @@
     ],
     "platform": "linux",
     "image": "nodered/node-red:latest-minimal",
-    "logo": "http://127.0.0.1/templates/images/logos/Node-red-icon.png",
+    "logo": "http://40.89.139.25/templates/images/logos/Node-red-icon.png",
     "restart_policy": "unless-stopped",
     "ports": [
       "8007:1880/tcp"
@@ -219,7 +169,7 @@
     ],
     "platform": "linux",
     "image": "digitalplant/eclipse-mosquitto:latest",
-    "logo": "http://127.0.0.1/templates/images/logos/Mosquitto.png",
+    "logo": "http://40.89.139.25/templates/images/logos/Mosquitto.png",
     "restart_policy": "unless-stopped",
     "ports": [
       "8004:1883/tcp",
@@ -251,7 +201,7 @@
       "schneider-electric"
     ],
     "platform": "linux",
-    "logo": "http://127.0.0.1/templates/images/logos/Portainer.png",
+    "logo": "http://40.89.139.25/templates/images/logos/Portainer.png",
     "image": "portainer/agent:latest",
     "restart_policy": "unless-stopped",
     "ports": [
