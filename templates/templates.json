@@ -92,7 +92,7 @@
       },
       {
         "container": "/srv/settings",
-        "bind": "/var/lib/docker/volumes/Nginx-80-Html-8030/_data/settings"
+        "bind": "/var/lib/docker/volumes/Nginx-80-Html/_data/settings"
       }
     ]
   },
